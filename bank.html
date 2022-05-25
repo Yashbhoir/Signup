@@ -1,0 +1,57 @@
+<html>
+<head>
+      <link href="css/style.css" rel="stylesheet" />
+    </head>
+<body>
+   
+    <div class="container" style="margin-top:30%;">
+         <h1>ATM</h1>
+        <div class="input-container"><input type="button" id="Deposit" value="Deposit" onclick="deposit()"></div>
+   <div class="input-container">
+       <input type="button" id="Withdraw" value="Withdraw" onclick="withdraw()"></div>
+	<div class="input-container">
+        <input type="button" id="Pt" value="Previoustransaction" 
+               onclick="previous()"></div>
+        <div class="input-container"> <input type="button" id="Checkbal" value="Checkbalance" onclick="check()"></div>
+        <div class="input-container"><input type="button" id="Exit" value="Exit"></div>
+    </div>
+    <script>
+        var balance=1000;
+        var pt=0;
+        function deposit()
+        {
+            
+            var amt=parseInt(prompt("Enter amount"));
+            if(amt !=0)
+                {
+                    balance = balance+amt;
+                    pt=amt;
+                }
+        }
+         function withdraw()
+        {
+            
+            var amt=parseInt(prompt("Enter amount"));
+            if(amt !=0)
+                {
+                    balance = balance-amt;
+                    pt=-amt;
+                }
+        }
+        function check()
+        {
+            window.alert(balance);
+        }
+         function previous()
+        { 
+            if(pt>0){
+            window.alert(pt+"₹ Deposited");
+              
+            }
+            else{
+                 window.alert(pt+"₹ Deducted");
+            }
+        }
+    </script>
+</body>
+</html>
